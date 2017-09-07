@@ -1,0 +1,47 @@
+{
+    "name": "larawos/framework",
+    "description": "The Larawos Framework.",
+    "keywords": ["framework", "larawos"],
+    "license": "MIT",
+    "homepage": "https://larawos.com",
+    "authors": [
+        {
+            "name": "John Smith",
+            "email": "john@larawos.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0",
+        "barryvdh/laravel-cors": "*",
+        "guzzlehttp/guzzle": "*",
+        "ignited/laravel-omnipay": "*",
+        "jenssegers/agent": "*",
+        "overtrue/easy-sms": "*",
+        "jpush/jpush": "*",
+        "maatwebsite/excel": "*",
+        "barryvdh/laravel-snappy": "*",
+        "lokielse/omnipay-alipay": "*",
+        "lokielse/omnipay-unionpay": "*",
+        "lokielse/omnipay-wechatpay": "*",
+        "simplesoftwareio/simple-qrcode": "*",
+        "teamtnt/laravel-scout-tntsearch-driver": "*"
+    },
+    "require-dev": {
+        "caouecs/laravel-lang": "*",
+        "mpociot/laravel-apidoc-generator": "*",
+        "orangehill/iseed": "*"
+    },
+    "autoload": {
+        "files": [
+            "src/Illuminate/Support/helpers.php"
+        ],
+        "psr-4": {
+            "Larawos\\Illuminate\\": "src/Illuminate/"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
