@@ -1,0 +1,97 @@
+<?php
+
+namespace DummyNamespace;
+
+use Illuminate\Bus\Queueable;
+use Illuminate\Notifications\Notification;
+use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Notifications\Messages\MailMessage;
+use Larawos\Illuminate\Foundation\Channels\PushChannel;
+use Larawos\Illuminate\Foundation\Channels\SmsChannel;
+
+class DummyClass extends Notification
+{
+    use Queueable;
+
+    /**
+     * Create a new notification instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        //
+    }
+
+    /**
+     * 切换通知频道
+     *
+     * @param  mixed  $notifiable
+     * @return array
+     */
+    public function via($notifiable)
+    {
+        return ['mail'];
+    }
+
+    /**
+     * 获取邮件通知物件
+     *
+     * @param  mixed  $notifiable
+     * @return \Illuminate\Notifications\Messages\MailMessage
+     */
+    public function toMail($notifiable)
+    {
+        return (new MailMessage)->markdown('DummyView');
+    }
+
+    /**
+     * 获取短信通知物件
+     *
+     * @param  mixed  $notifiable
+     * @return array
+     */
+    public function toSms($notifiable)
+    {
+        return [
+            'phone' => '',  // 手机号
+            'template' => '',    // 短信模版编号
+            'data' => [
+                // 短信内容(array)
+            ],
+            'content' => '' // 短信内容(string)
+        ];
+    }
+
+    /**
+     * 获取推送通知物件
+     *
+     * @param  mixed  $notifiable
+     * @return array
+     */
+    public function toPush($notifiable)
+    {
+        return [
+            'platform' => ['ios', 'android'],
+            'data' => [
+                // 推送内容
+            ],
+            // 'alias' => [
+            //     // 别名推送  (推送给部分某些用户)
+            // ]
+        ];
+    }
+
+    /**
+     * 获取数组通知物件
+     *
+     * @param  mixed  $notifiable
+     * @return array
+     */
+    public function toArray($notifiable)
+    {
+        return [
+            //
+        ];
+    }
+}

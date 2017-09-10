@@ -1,0 +1,22 @@
+<?php
+
+namespace DummyNamespace;
+
+use DummyFullModelClass;
+use Larawos\Illuminate\Foundation\Repositories\Traits\Commentable;
+use Larawos\Illuminate\Foundation\Repositories\Traits\Deletedable;
+use Larawos\Illuminate\Foundation\Repositories\Traits\MappedModel;
+use Larawos\Illuminate\Foundation\Repositories\Traits\Searchable;
+use Larawos\Illuminate\Foundation\Repositories\Traits\Sortable;
+use Larawos\Illuminate\Foundation\Repositories\Traits\Uploadable;
+use Larawos\Illuminate\Foundation\Repositories\AbstractEloquentRepository;
+
+class DummyClass extends AbstractEloquentRepository
+{
+    use MappedModel;
+
+    public function __construct(DummyModelClass $query)
+    {
+        $this->query = $query;
+    }
+}

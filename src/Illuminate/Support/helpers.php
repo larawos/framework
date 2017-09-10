@@ -23,18 +23,6 @@ if (! function_exists('includeRouteFiles')) {
     }
 }
 
-if (! function_exists('api')) {
-    /**
-     * 返回json格式的api数据
-     */
-    function api($body = [], $status = 200, $message = '请求成功')
-    {
-        return response()->json(
-                compact('status', 'message', 'body')
-            );
-    }
-}
-
 if (! function_exists('carbon')) {
     /**
      * 返回 carbon 时间处理类
@@ -68,5 +56,25 @@ if (! function_exists('get_avatar')) {
         return !is_null($image) ?
         trim(config('app.url'), '//'). '/storage/'. trim($image->path, '//') :
         trim(config('app.url'), '//'). '/avatar.png';
+    }
+}
+
+if (! function_exists('account')) {
+    /**
+     * 获取登陆账号
+     */
+    function account()
+    {
+        return auth()->user();
+    }
+}
+
+if (! function_exists('user')) {
+    /**
+     * 获取用户
+     */
+    function user()
+    {
+        return account() ? account()->user : null;
     }
 }

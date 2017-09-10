@@ -1,0 +1,67 @@
+<?php
+
+namespace DummyNamespace;
+
+use DummyFullModelClass;
+use DummyFullRepositoryClass;
+use DummyRootNamespaceHttp\Controllers\Controller;
+
+class DummyClass extends Controller
+{
+    protected $DummyRepositoryVariable;
+
+    public function __construct(DummyRepositoryClass $DummyRepositoryVariable)
+    {
+        $this->DummyRepositoryVariable = $DummyRepositoryVariable;
+    }
+
+    /**
+     * 首页视图
+     *
+     * @return \Illuminate\View\Factory
+     */
+    public function index()
+    {
+        return view('DummyRootView.index', [
+                //
+            ]);
+    }
+
+    /**
+     * 创建页视图
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        return view('DummyRootView.create', [
+                //
+            ]);
+    }
+
+    /**
+     * 详情页视图
+     *
+     * @param  \DummyFullModelClass  $DummyModelVariable
+     * @return \Illuminate\View\Factory
+     */
+    public function show(DummyModelClass $DummyModelVariable)
+    {
+        return view('DummyRootView.show', [
+                //
+            ]);
+    }
+
+    /**
+     * 编辑页视图
+     *
+     * @param  \DummyFullModelClass  $DummyModelVariable
+     * @return \Illuminate\View\Factory
+     */
+    public function edit(DummyModelClass $DummyModelVariable)
+    {
+        return view('DummyRootView.edit', [
+                //
+            ]);
+    }
+}

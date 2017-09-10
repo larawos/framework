@@ -1,0 +1,89 @@
+<?php
+
+namespace DummyNamespace;
+
+use DummyFullModelClass;
+use DummyFullRepositoryClass;
+use DummyFullStoreRequestClass;
+use DummyFullUpdateRequestClass;
+use DummyFullIndexResponseClass;
+use DummyFullShowResponseClass;
+use DummyFullStoreResponseClass;
+use DummyFullUpdateResponseClass;
+use DummyFullDeleteResponseClass;
+use DummyRootNamespaceHttp\Controllers\Controller;
+
+class DummyClass extends Controller
+{
+    protected $DummyRepositoryVariable;
+
+    public function __construct(DummyRepositoryClass $DummyRepositoryVariable)
+    {
+        $this->DummyRepositoryVariable = $DummyRepositoryVariable;
+    }
+
+    /**
+     * 暂无说明
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        return DummyIndexResponseClass::make(
+                $this->DummyRepositoryVariable->paginate(50)
+            )->additional(DummyIndexResponseClass::successTemplate());
+    }
+
+    /**
+     * 暂无说明
+     *
+     * @param  \DummyFullModelClass  $DummyModelVariable
+     * @return \Illuminate\Http\Response
+     */
+    public function show(DummyModelClass $DummyModelVariable)
+    {
+        return DummyShowResponseClass::make(
+                $DummyModelVariable
+            )->additional(DummyShowResponseClass::successTemplate());
+    }
+
+    /**
+     * 暂无说明
+     *
+     * @param  \DummyFullStoreRequestClass  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(DummyStoreRequestClass $request)
+    {
+        return DummyStoreResponseClass::make(
+                $this->DummyRepositoryVariable->create($request->all())
+            )->additional(DummyStoreResponseClass::successTemplate());
+    }
+
+    /**
+     * 暂无说明
+     *
+     * @param  \DummyFullUpdateRequestClass  $request
+     * @param  \DummyFullModelClass  $DummyModelVariable
+     * @return \Illuminate\Http\Response
+     */
+    public function update(DummyUpdateRequestClass $request, DummyModelClass $DummyModelVariable)
+    {
+        return DummyUpdateResponseClass::make(
+                $this->DummyRepositoryVariable->update($DummyModelVariable, $request->all())
+            )->additional(DummyUpdateResponseClass::successTemplate());
+    }
+
+    /**
+     * 暂无说明
+     *
+     * @param  \DummyFullModelClass  $DummyModelVariable
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(DummyModelClass $DummyModelVariable)
+    {
+        return DummyDeleteResponseClass::make(
+                $this->DummyRepositoryVariable->delete($DummyModelVariable)
+            )->additional(DummyDeleteResponseClass::successTemplate());
+    }
+}

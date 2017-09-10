@@ -12,6 +12,7 @@
     ],
     "require": {
         "php": ">=7.0",
+        "laravel/framework": "5.5.*",
         "barryvdh/laravel-cors": "*",
         "guzzlehttp/guzzle": "*",
         "ignited/laravel-omnipay": "*",
@@ -24,6 +25,8 @@
         "lokielse/omnipay-unionpay": "*",
         "lokielse/omnipay-wechatpay": "*",
         "simplesoftwareio/simple-qrcode": "*",
+        "intervention/image": "*",
+        "appstract/laravel-opcache": "*",
         "teamtnt/laravel-scout-tntsearch-driver": "*"
     },
     "require-dev": {
