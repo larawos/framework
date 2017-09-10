@@ -81,7 +81,7 @@ class ArtisanServiceProvider extends ServiceProvider
     protected function registerViewMakeCommand()
     {
         $this->app->singleton('command.view.make', function ($app) {
-            return new ConsoleMakeCommand($app['files']);
+            return new ViewMakeCommand($app['files']);
         });
     }
 
@@ -93,7 +93,7 @@ class ArtisanServiceProvider extends ServiceProvider
     protected function registerRepositoryMakeCommand()
     {
         $this->app->singleton('command.repository.make', function ($app) {
-            return new ConsoleMakeCommand($app['files']);
+            return new RepositoryMakeCommand($app['files']);
         });
     }
 
@@ -102,10 +102,10 @@ class ArtisanServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    protected function registerConsoleMakeCommand()
+    protected function registerRequestMakeCommand()
     {
-        $this->app->singleton('command.console.make', function ($app) {
-            return new ConsoleMakeCommand($app['files']);
+        $this->app->singleton('command.request.make', function ($app) {
+            return new RequestMakeCommand($app['files']);
         });
     }
 
@@ -117,7 +117,7 @@ class ArtisanServiceProvider extends ServiceProvider
     protected function registerLarawosInstallCommand()
     {
         $this->app->singleton('command.larawos.install', function ($app) {
-            return new ConsoleMakeCommand($app['files']);
+            return new LarawosInstallCommand($app['files']);
         });
     }
 
