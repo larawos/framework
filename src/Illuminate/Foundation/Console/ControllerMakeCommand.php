@@ -73,9 +73,9 @@ class ControllerMakeCommand extends GeneratorCommand
             $replace = $this->buildViewReplacements();
         } else {
             $replace = $this->buildRequestReplacements();
+            $replace = $this->buildResourceReplacements($replace);
         }
 
-        $replace = $this->buildResourceReplacements($replace);
         $replace = $this->buildModelReplacements($replace);
         $replace = $this->buildRepositoryReplacements($replace);
 
