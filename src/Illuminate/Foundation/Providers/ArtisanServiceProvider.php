@@ -42,7 +42,7 @@ class ArtisanServiceProvider extends ServiceProvider
         'ResourceMake'     => 'command.resource.make',
         'RepositoryMake'   => 'command.repository.make',
         'ControllerMake'   => 'command.controller.make',
-        'NotificationMake' => 'command.notificaion.make',
+        'NotificationMake' => 'command.notification.make',
         'LarawosInstall'   => 'command.larawos.install'
     ];
 
