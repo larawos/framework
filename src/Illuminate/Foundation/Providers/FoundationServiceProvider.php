@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminate\Foundation\Providers;
+namespace Larawos\Illuminate\Foundation\Providers;
 
 use Illuminate\Support\AggregateServiceProvider;
 
