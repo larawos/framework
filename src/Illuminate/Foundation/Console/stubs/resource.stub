@@ -7,13 +7,27 @@ use Larawos\Illuminate\Http\Resources\Json\Resource;
 class DummyClass extends Resource
 {
     /**
-     * Transform the resource into an array.
+     * The resource template.
      *
-     * @param  \Illuminate\Http\Request
+     * @param  \Illuminate\Database\Eloquent\Model $model
      * @return array
      */
-    public function toArray($request)
+    protected function template($model)
     {
-        return parent::toArray($request);
+        return [
+            //
+        ];
+    }
+
+    /**
+     * The resource message.
+     *
+     * @return array
+     */
+    protected function message()
+    {
+        return [
+            //
+        ];
     }
 }
