@@ -13,7 +13,7 @@
     "require": {
         "php": ">=7.0",
         "laravel/framework": "5.5.*",
-        "laravel/horizon": "~v1.0.2",
+        "laravel/horizon": "*",
         "barryvdh/laravel-cors": "*",
         "guzzlehttp/guzzle": "*",
         "ignited/laravel-omnipay": "*",
