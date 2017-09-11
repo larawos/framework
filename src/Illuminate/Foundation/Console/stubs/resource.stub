@@ -14,9 +14,7 @@ class DummyClass extends Resource
      */
     protected function template($model)
     {
-        return [
-            //
-        ];
+        return $model->toArray();
     }
 
     /**

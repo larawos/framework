@@ -11,7 +11,7 @@
         }
     ],
     "require": {
-        "php": ">=7.0",
+        "php": ">=7.1",
         "laravel/framework": "5.5.*",
         "laravel/horizon": "*",
         "barryvdh/laravel-cors": "*",
@@ -28,6 +28,7 @@
         "simplesoftwareio/simple-qrcode": "*",
         "intervention/image": "*",
         "appstract/laravel-opcache": "*",
+        "predis/predis": "*",
         "teamtnt/laravel-scout-tntsearch-driver": "*"
     },
     "require-dev": {
