@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Frontend;
+namespace Larawos\Illuminate\Foundation\Payment;
 
 use Illuminate\Http\Request;
 use Omnipay;
 use Log;
 
-class WechatpayCallback
+trait WechatpayCallback
 {
     protected function paidSuccess(Request $request)
     {

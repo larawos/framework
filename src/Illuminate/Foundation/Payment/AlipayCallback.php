@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Omnipay;
 use Log;
 
-class AlipayCallback
+trait AlipayCallback
 {
     protected function paidSuccess(Request $request)
     {

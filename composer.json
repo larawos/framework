@@ -44,6 +44,19 @@
             "Larawos\\Illuminate\\": "src/Illuminate/"
         }
     },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Larawos\\Illuminate\\Foundation\\Providers\\FoundationServiceProvider"
+            ],
+            "aliases": {
+                "Omnipay": "Ignited\\LaravelOmnipay\\Facades\\OmnipayFacade",
+                "Agent": "Jenssegers\\Agent\\Facades\\Agent",
+                "Excel": "Maatwebsite\\Excel\\Facades\\Excel",
+                "QrCode": "SimpleSoftwareIO\\QrCode\\Facades\\QrCode"
+            }
+        }
+    },
     "config": {
         "sort-packages": true
     },

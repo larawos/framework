@@ -39,10 +39,9 @@ if (! function_exists('get_cover')) {
      */
     function get_cover($id)
     {
-        $image = App\Models\Image::find($id);
+        $image = Larawos\Illuminate\Foundation\Models\File::find($id);
         return !is_null($image) ?
-        trim(config('app.url'), '//'). '/storage/'. trim($image->path, '//') :
-        trim(config('app.url'), '//'). '/image.png';
+        url('storage/'. trim($image->path, '//')) : url('image.png');
     }
 }
 
@@ -52,10 +51,9 @@ if (! function_exists('get_avatar')) {
      */
     function get_avatar($id)
     {
-        $image = App\Models\Image::find($id);
+        $image = Larawos\Illuminate\Foundation\Models\File::find($id);
         return !is_null($image) ?
-        trim(config('app.url'), '//'). '/storage/'. trim($image->path, '//') :
-        trim(config('app.url'), '//'). '/avatar.png';
+        url('storage/'. trim($image->path, '//')) : url('avatar.png');
     }
 }
 
