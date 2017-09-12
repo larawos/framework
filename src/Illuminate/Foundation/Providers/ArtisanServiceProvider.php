@@ -8,7 +8,6 @@ use Larawos\Illuminate\Foundation\Console\ModelMakeCommand;
 use Larawos\Illuminate\Foundation\Console\RequestMakeCommand;
 use Larawos\Illuminate\Foundation\Console\ResourceMakeCommand;
 use Larawos\Illuminate\Foundation\Console\RepositoryMakeCommand;
-use Larawos\Illuminate\Foundation\Console\LarawosInstallCommand;
 use Larawos\Illuminate\Foundation\Console\ControllerMakeCommand;
 use Larawos\Illuminate\Foundation\Console\NotificationMakeCommand;
 
@@ -42,8 +41,7 @@ class ArtisanServiceProvider extends ServiceProvider
         'ResourceMake'     => 'command.resource.make',
         'RepositoryMake'   => 'command.repository.make',
         'ControllerMake'   => 'command.controller.make',
-        'NotificationMake' => 'command.notification.make',
-        'LarawosInstall'   => 'command.larawos.install'
+        'NotificationMake' => 'command.notification.make'
     ];
 
     /**
@@ -106,18 +104,6 @@ class ArtisanServiceProvider extends ServiceProvider
     {
         $this->app->singleton('command.request.make', function ($app) {
             return new RequestMakeCommand($app['files']);
-        });
-    }
-
-    /**
-     * Register the command.
-     *
-     * @return void
-     */
-    protected function registerLarawosInstallCommand()
-    {
-        $this->app->singleton('command.larawos.install', function ($app) {
-            return new LarawosInstallCommand($app['files']);
         });
     }
 
