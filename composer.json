@@ -29,10 +29,7 @@
         "intervention/image": "*",
         "appstract/laravel-opcache": "*",
         "predis/predis": "*",
-        "teamtnt/laravel-scout-tntsearch-driver": "*"
-    },
-    "require-dev": {
-        "caouecs/laravel-lang": "*",
+        "teamtnt/laravel-scout-tntsearch-driver": "*",
         "mpociot/laravel-apidoc-generator": "*",
         "orangehill/iseed": "*"
     },
