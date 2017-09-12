@@ -6,8 +6,8 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
-use Larawos\Illuminate\Foundation\Channels\JpushChannel;
-use Larawos\Illuminate\Foundation\Channels\AlismsChannel;
+use Larawos\Illuminate\Foundation\Channels\PushChannel;
+use Larawos\Illuminate\Foundation\Channels\SmsChannel;
 
 class DummyClass extends Notification
 {
