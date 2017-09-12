@@ -18,7 +18,7 @@ class SmsChannel
     public function send($notifiable, Notification $notification)
     {
         $message = collect($notification->toSms($notifiable));
-        $sms = new EasySms(config('app.easysms'));
+        $sms = new EasySms(config('easysms'));
         if (! ($message->has('content') && $message->has('template') && $message->has('data') && $message->has('phone'))) {
             throw new GeneralException('短信消息实体必须带有 `content`, `template`, `data`, `phone` 字段。');
         }
