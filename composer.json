@@ -29,6 +29,7 @@
         "intervention/image": "*",
         "appstract/laravel-opcache": "*",
         "predis/predis": "*",
+        "zgldh/qiniu-laravel-storage": "*",
         "teamtnt/laravel-scout-tntsearch-driver": "*",
         "mpociot/laravel-apidoc-generator": "*",
         "orangehill/iseed": "*"
@@ -47,10 +48,6 @@
                 "Larawos\\Illuminate\\Foundation\\Providers\\FoundationServiceProvider"
             ],
             "aliases": {
-                "Omnipay": "Ignited\\LaravelOmnipay\\Facades\\OmnipayFacade",
-                "Agent": "Jenssegers\\Agent\\Facades\\Agent",
-                "Excel": "Maatwebsite\\Excel\\Facades\\Excel",
-                "QrCode": "SimpleSoftwareIO\\QrCode\\Facades\\QrCode"
             }
         }
     },

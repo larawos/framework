@@ -42,10 +42,6 @@ abstract class AbstractEloquentRepository
         DB::transaction(function () use ($model, $data, $callback) {
             if ($model->save()) {
 
-                if (method_exists($this, 'upload')) {
-                    $this->upload($model, $data);
-                }
-
                 if ($callback instanceof Closure) {
                     $callback($model, $data);
                 }
@@ -73,10 +69,6 @@ abstract class AbstractEloquentRepository
 
         DB::transaction(function () use ($model, $data, $callback) {
             if ($model->save()) {
-
-                if (method_exists($this, 'upload')) {
-                    $this->upload($model, $data);
-                }
 
                 if ($callback instanceof Closure) {
                     $callback($model, $data);

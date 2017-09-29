@@ -4,7 +4,9 @@ namespace Larawos\Illuminate\Foundation\Channels;
 
 use Illuminate\Notifications\Notification;
 use Overtrue\EasySms\EasySms;
+use Overtrue\EasySms\Exceptions\NoGatewayAvailableException;
 use Larawos\Illuminate\Foundation\Exceptions\GeneralException;
+use Log;
 
 class SmsChannel
 {
@@ -23,6 +25,12 @@ class SmsChannel
             throw new GeneralException('短信消息实体必须带有 `content`, `template`, `data`, `phone` 字段。');
         }
 
-        $sms->send($message['phone'], $message->all());
+        try {
+            $response = $sms->send($message['phone'], $message->except('phone')->all());
+        } catch (NoGatewayAvailableException $e) {
+            Log::error('短信发送失败');
+        }
+
+
     }
 }

@@ -36,11 +36,11 @@ class PushChannel
 
         try {
             $response = $push_payload->send();
-            'local' != config('app.env') || Log::info($response);
+            'local' != config('app.env') || Log::error($response);
         } catch (APIConnectionException $e) {
-            'local' != config('app.env') || Log::info($e->getMessage());
+            'local' != config('app.env') || Log::error($e->getMessage());
         } catch (APIRequestException $e) {
-            'local' != config('app.env') || Log::info($e->getMessage());
+            'local' != config('app.env') || Log::error($e->getMessage());
         }
 
     }

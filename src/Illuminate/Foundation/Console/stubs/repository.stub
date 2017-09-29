@@ -4,12 +4,10 @@ namespace DummyNamespace;
 
 use DummyFullModelClass;
 use Larawos\Illuminate\Foundation\Repositories\AbstractEloquentRepository;
-use Larawos\Illuminate\Foundation\Repositories\Traits\Commentable;
 use Larawos\Illuminate\Foundation\Repositories\Traits\Deletedable;
 use Larawos\Illuminate\Foundation\Repositories\Traits\MappedModel;
 use Larawos\Illuminate\Foundation\Repositories\Traits\Searchable;
 use Larawos\Illuminate\Foundation\Repositories\Traits\Sortable;
-use Larawos\Illuminate\Foundation\Repositories\Traits\Uploadable;
 
 class DummyClass extends AbstractEloquentRepository
 {
